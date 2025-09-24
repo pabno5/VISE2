@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Alice Classic",
+    "country": "USA",
+    "monthlyIncome": 300,
+    "viseClub": false,
+    "cardType": "Classic"
+  },
+  {
+    "name": "Bob Gold Valid",
+    "country": "USA",
+    "monthlyIncome": 600,
+    "viseClub": false,
+    "cardType": "Gold"
+  },
+  {
+    "name": "Charlie Gold Invalid",
+    "country": "USA",
+    "monthlyIncome": 400,
+    "viseClub": false,
+    "cardType": "Gold"
+  },
+  {
+    "name": "Diana Platinum Valid",
+    "country": "USA",
+    "monthlyIncome": 1500,
+    "viseClub": true,
+    "cardType": "Platinum"
+  },
+  {
+    "name": "Evan Platinum Invalid Income",
+    "country": "USA",
+    "monthlyIncome": 800,
+    "viseClub": true,
+    "cardType": "Platinum"
+  },
+  {
+    "name": "Fiona Platinum Invalid Club",
+    "country": "USA",
+    "monthlyIncome": 1500,
+    "viseClub": false,
+    "cardType": "Platinum"
+  },
+  {
+    "name": "George Black Valid",
+    "country": "USA",
+    "monthlyIncome": 3000,
+    "viseClub": true,
+    "cardType": "Black"
+  },
+  {
+    "name": "Hannah Black Invalid Income",
+    "country": "USA",
+    "monthlyIncome": 1500,
+    "viseClub": true,
+    "cardType": "Black"
+  },
+  {
+    "name": "Igor Black Invalid Country",
+    "country": "China",
+    "monthlyIncome": 3000,
+    "viseClub": true,
+    "cardType": "Black"
+  },
+  {
+    "name": "Jade White Valid",
+    "country": "USA",
+    "monthlyIncome": 3000,
+    "viseClub": true,
+    "cardType": "White"
+  },
+  {
+    "name": "Karl White Invalid Income",
+    "country": "USA",
+    "monthlyIncome": 1000,
+    "viseClub": true,
+    "cardType": "White"
+  },
+  {
+    "name": "Luna White Invalid Country",
+    "country": "India",
+    "monthlyIncome": 5000,
+    "viseClub": true,
+    "cardType": "White"
+  }
+]

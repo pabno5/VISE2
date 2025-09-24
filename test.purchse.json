@@ -1,0 +1,59 @@
+[
+  {
+    "clientId": 1,
+    "amount": 80,
+    "currency": "USD",
+    "purchaseDate": "2025-09-22T14:30:00Z",
+    "purchaseCountry": "USA"
+  },
+  {
+    "clientId": 2,
+    "amount": 150,
+    "currency": "USD",
+    "purchaseDate": "2025-09-23T10:00:00Z",
+    "purchaseCountry": "USA"
+  },
+  {
+    "clientId": 3,
+    "amount": 250,
+    "currency": "USD",
+    "purchaseDate": "2025-09-20T14:30:00Z",
+    "purchaseCountry": "USA"
+  },
+  {
+    "clientId": 3,
+    "amount": 150,
+    "currency": "USD",
+    "purchaseDate": "2025-09-22T14:30:00Z",
+    "purchaseCountry": "France"
+  },
+  {
+    "clientId": 4,
+    "amount": 200,
+    "currency": "USD",
+    "purchaseDate": "2025-09-23T14:30:00Z",
+    "purchaseCountry": "USA"
+  },
+  {
+    "clientId": 4,
+    "amount": 300,
+    "currency": "USD",
+    "purchaseDate": "2025-09-27T14:30:00Z",
+    "purchaseCountry": "France"
+  },
+  {
+    "clientId": 5,
+    "amount": 150,
+    "currency": "USD",
+    "purchaseDate": "2025-09-26T14:30:00Z",
+    "purchaseCountry": "USA"
+  },
+  {
+    "clientId": 5,
+    "amount": 250,
+    "currency": "USD",
+    "purchaseDate": "2025-09-28T14:30:00Z",
+    "purchaseCountry": "USA"
+  }
+]
+
