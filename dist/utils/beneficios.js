@@ -48,14 +48,19 @@ class Descuentos {
         }
         if (card === "White") {
             const notAllowCountries = ["China", "Vietnam", "India", "Irán"];
+            const weekDays = [
+                "lunes",
+                "martes",
+                "miercoles",
+                "jueves",
+                "viernes",
+            ];
             let discount = 0;
+            if (weekDays.includes(day) && payment >= 100) {
+                discount += 0.25;
+            }
             if ((day === "sabado" || day === "domingo") && payment >= 200) {
                 discount += 0.35;
-            }
-            else {
-                if (payment >= 100) {
-                    discount += 0.25;
-                }
             }
             if (countryRecidence !== countryPayment &&
                 !notAllowCountries.includes(countryRecidence)) {
