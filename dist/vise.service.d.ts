@@ -5,12 +5,19 @@ export declare class ViseService {
     create(persona: Persona): Persona;
     findAll(): Persona[];
     findOne(id: number): Persona;
-    aplyDiscount(compra: CompraRequest): {
-        userId: number;
-        name: string;
-        cardType: "Classic" | "Gold" | "Platinum" | "Black" | "White";
-        originalAmount: number;
-        discountPercent: number;
-        finalAmount: number;
+    applyDiscount(compra: CompraRequest): {
+        status: string;
+        purchase: {
+            clientId: number;
+            originalAmount: number;
+            discountApplied: number;
+            finalAmount: number;
+            benefit: string;
+        };
+        error?: undefined;
+    } | {
+        status: string;
+        error: any;
+        purchase?: undefined;
     };
 }

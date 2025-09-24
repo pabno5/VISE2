@@ -18,14 +18,18 @@ export declare class ViseController {
     };
     findAll(): Persona[];
     applyDiscount(compra: CompraRequest): {
-        userId: number;
-        name: string;
-        cardType: "Classic" | "Gold" | "Platinum" | "Black" | "White";
-        originalAmount: number;
-        discountPercent: number;
-        finalAmount: number;
+        status: string;
+        purchase: {
+            clientId: number;
+            originalAmount: number;
+            discountApplied: number;
+            finalAmount: number;
+            benefit: string;
+        };
+        error?: undefined;
     } | {
-        status: any;
-        message: any;
+        status: string;
+        error: any;
+        purchase?: undefined;
     };
 }

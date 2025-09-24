@@ -43,18 +43,53 @@ let ViseService = class ViseService {
         }
         return persona;
     }
-    aplyDiscount(compra) {
-        const cliente = this.findOne(compra.userId);
-        const descuento = this.descuentos.getDescuento(cliente.cardType, compra.payment, cliente.country, compra.countryPayment, compra.day.toLowerCase());
-        const totalDescuento = compra.payment - compra.payment * descuento;
-        return {
-            userId: cliente.id,
-            name: cliente.name,
-            cardType: cliente.cardType,
-            originalAmount: compra.payment,
-            discountPercent: descuento * 100,
-            finalAmount: totalDescuento,
-        };
+    applyDiscount(compra) {
+        try {
+            const cliente = this.findOne(compra.clientId);
+            const notAllowCountries = ["China", "Vietnam", "India", "Irán"];
+            if ((cliente.cardType === "Black" || cliente.cardType === "White") &&
+                notAllowCountries.includes(compra.purchaseCountry)) {
+                return {
+                    status: "Rejected",
+                    error: `El cliente con tarjeta ${cliente.cardType} no puede realizar compras desde ${compra.purchaseCountry}`,
+                };
+            }
+            const date = new Date(compra.purchaseDate);
+            const days = [
+                "domingo",
+                "lunes",
+                "martes",
+                "miercoles",
+                "jueves",
+                "viernes",
+                "sabado",
+            ];
+            const day = days[date.getUTCDay()];
+            const descuentoPercent = this.descuentos.getDescuento(cliente.cardType, compra.amount, cliente.country, compra.purchaseCountry, day);
+            const discountApplied = compra.amount * descuentoPercent;
+            const finalAmount = compra.amount - discountApplied;
+            let benefit = "";
+            if (descuentoPercent > 0) {
+                const dayCapitalized = day.charAt(0).toUpperCase() + day.slice(1);
+                benefit = `${dayCapitalized} - Descuento ${Math.round(descuentoPercent * 100)}%`;
+            }
+            return {
+                status: "Approved",
+                purchase: {
+                    clientId: cliente.id,
+                    originalAmount: compra.amount,
+                    discountApplied: Math.round(discountApplied),
+                    finalAmount: Math.round(finalAmount),
+                    benefit: benefit || "Sin beneficio aplicado",
+                },
+            };
+        }
+        catch (error) {
+            return {
+                status: "Rejected",
+                error: error.message,
+            };
+        }
     }
 };
 exports.ViseService = ViseService;

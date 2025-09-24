@@ -8,8 +8,9 @@ export interface Persona {
     cardType: "Classic" | "Gold" | "Platinum" | "Black" | "White";
 }
 export interface CompraRequest {
-    userId: number;
-    payment: number;
-    countryPayment: string;
-    day: string;
+    clientId: number;
+    amount: number;
+    currency: string;
+    purchaseDate: string;
+    purchaseCountry: string;
 }

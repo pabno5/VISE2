@@ -43,15 +43,7 @@ let ViseController = class ViseController {
         return this.viseService.findAll();
     }
     applyDiscount(compra) {
-        try {
-            return this.viseService.aplyDiscount(compra);
-        }
-        catch (error) {
-            return {
-                status: error.status || "Error",
-                message: error.message || "No se pudo aplicar el descuento",
-            };
-        }
+        return this.viseService.applyDiscount(compra);
     }
 };
 exports.ViseController = ViseController;
