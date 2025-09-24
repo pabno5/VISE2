@@ -3,7 +3,7 @@ import { Persona } from "../vise.interface";
 class Restriciones {
   static getRestricion(person: Persona): boolean {
     if (person.cardType === "Classic") {
-      return false;
+      return true;
     }
 
     if (person.cardType === "Gold") {
