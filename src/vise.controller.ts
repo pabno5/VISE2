@@ -16,7 +16,7 @@ export class ViseController {
         clientId: result.id,
         name: result.name,
         cardType: result.cardType,
-        status: result.status,
+        status: "Registered",
         message: `Cliente apto para tarjeta ${result.cardType}`,
       };
     } catch (error) {
