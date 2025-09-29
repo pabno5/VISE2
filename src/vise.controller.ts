@@ -4,11 +4,11 @@ import type { CompraRequest, Persona } from "./vise.interface";
 import { Get } from "@nestjs/common";
 import { Param } from "@nestjs/common";
 
-@Controller("client")
+@Controller()
 export class ViseController {
   constructor(private viseService: ViseService) {}
 
-  @Post()
+  @Post("client")
   create(@Body() persona: Persona) {
     try {
       const result = this.viseService.create(persona);
