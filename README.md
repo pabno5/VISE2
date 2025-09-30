@@ -13,4 +13,6 @@ Ruta Post: localhost:3000/client
 Ruta Get: localhost:3000/client
 Ruta Post 2: localhost:3000/client/purchase
 
+Se cambiaron las respuestas HTTP 200 a HTTP 201 para que la prueba pueda aceptar el codigo.
+
 
