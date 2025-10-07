@@ -20,7 +20,7 @@ on:
         required: true
 
 env:
-  IMAGE_URL: ${{ secrets.ACR_NAME_ELIANA }}.azurecr.io/${{ github.event.inputs.IMAGE_REPOSITORY }}:${{ github.event.inputs.IMAGE_TAG }}
+  IMAGE_URL: ${{ secrets.ACR_NAME_PABLO }}.azurecr.io/${{ github.event.inputs.IMAGE_REPOSITORY }}:${{ github.event.inputs.IMAGE_TAG }}
 
 jobs:
   build-and-push-image:
@@ -34,9 +34,9 @@ jobs:
       - name: Docker Login
         uses: azure/docker-login@v1
         with:
-          login-server: ${{ secrets.ACR_NAME_ELIANA }}.azurecr.io
-          username: ${{ secrets.ACR_NAME_ELIANA }}
-          password: ${{ secrets.ACR_PASSWORD_ELIANA }}
+          login-server: ${{ secrets.ACR_NAME_PABLO }}.azurecr.io
+          username: ${{ secrets.ACR_NAME_PABLO }}
+          password: ${{ secrets.ACR_PASSWORD_PABLO }}
 
       - name: Build and Push to ACR
         uses: docker/build-push-action@v6
@@ -55,7 +55,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ github.event.inputs.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_ELIANA }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_PABLO }}
           images: ${{ env.IMAGE_URL }}
 
   test-deploy:
